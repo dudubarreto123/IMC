@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Imc</title>
+    <!-- //Índice de massa corporal// -->
+</head>
+<body>
+    <div>
+    <h1>IMC</h1>
+    <label for="peso">Peso(kg,g)</label>
+    <input id ="peso" type="number" name="peso">
+    <br>
+    
+    <label for="altura">Altura(Metros,Centimetros)</label>
+    <input type="number" id ="altura" name="altura">
+    <br>
+
+    <button onclick="calcularImc()">Calcular</button>
+    <br>
+
+    <p>Seu Índice de massa corporal é <span id="resultado"></span></p>
+
+    
+
+    <script>
+        function calcularImc(){
+
+            const peso = window.document.getElementById("peso").value;
+            const altura = window.document.getElementById("altura").value;
+            const imc = peso / (altura**2);
+            document.getElementById("resultado").textContent = imc.toFixed(2)
+        }
+
+        let dinamico = document.title
+
+        window.addEventListener("blur", () => {
+            document.title = "IMC"
+
+            window.addEventListener("focus", () => {
+                document.title - "titulodinamico";
+            }
+        )});
+        
+        
+
+    </script>
+    </div>
+    <footer class="main-footer">
+        <p>&copy; By Eduardo Paiva Barreto</p>
+    </footer>
+
+  
+
+    
+</body>
+</html>
